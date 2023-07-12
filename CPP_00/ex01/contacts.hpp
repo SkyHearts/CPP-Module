@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 12:57:29 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/11 15:52:07 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/12 10:03:28 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@ public:
 };
 
 std::string truncate(std::string input);
-std::string truncate1(std::string input);
 
 #endif

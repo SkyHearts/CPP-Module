@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:22:31 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/11 16:31:33 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/11 17:28:32 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	Phonebook::displayAll(void){
 	std::cout << std::right << std::setw(10) << "First Name" << "|";
 	std::cout << std::right << std::setw(10) << "Last Name" << "|";
 	std::cout << std::right << std::setw(10) << "Nickname" << "|";
-	std::cout << std::right << std::setw(10) << "Phone Num" << "|";
+	std::cout << std::right << std::setw(10) << "Phone Num." << "|";
 	std::cout << std::right << std::setw(10) << "D. Secret" << "|" << std::endl;
-	std::cout << "|══════════┼══════════┼══════════┼══════════┼══════════┼══════════|" << std::endl;
+	std::cout << "├══════════┼══════════┼══════════┼══════════┼══════════┼══════════┤" << std::endl;
 	while (index < max){
 		std::cout << "|" << std::right << std::setw(10) << contacts[index].getIndex() << "|";
 		std::cout << std::right << std::setw(10) << contacts[index].getFName(1) << "|";
@@ -74,9 +74,11 @@ void	Phonebook::displayEntry(void){
 	std::cout << "Please select index :" << std::endl;
 	if (!(std::cin >> index)){
 		std::cout << "Please enter number only" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		return ;
 	}
-	if (index < 0 || index > max){
+	if (index <= 0 || index > max){
 		std::cout << "Please enter number between ";
 		std::cout << "1 to " << max << std::endl;
 		return ;
