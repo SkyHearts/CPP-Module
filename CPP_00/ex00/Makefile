@@ -5,7 +5,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 SRCS	=	megaphone.cpp
 SRCS_DIR	= ./
-SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
+SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 
 all: ${NAME}
 

@@ -7,7 +7,7 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98 ${FSAN}
 
 SRCS	=	main.cpp phonebook.cpp contacts.cpp
 SRCS_DIR	= ./
-SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
+SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 
 all:	${NAME}
 
