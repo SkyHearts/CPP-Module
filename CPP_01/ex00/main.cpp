@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:14:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/03 11:29:34 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/12 12:19:20 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main(){
 	one->announce();
 	randomChump("Artie");
 	delete one;
-	// system("leaks -q a.out");
+	system("leaks -q zombie");
 	return (0);
 }
