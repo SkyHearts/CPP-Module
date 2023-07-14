@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:19:19 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/13 13:15:58 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/14 08:51:00 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ void Harl::complain(std::string level){
 
 	for (int i = 0; i < 4; i++){
 		if (level == func[i].level){
-			void (Harl::*function)() = func[i].f;
-			(this->*function)();
+			//void (Harl::*function)() = func[i].f;
+			//(this->*function)();
+			(this->*func[i].f)();
 			break ;
 		}
 	};
