@@ -7,7 +7,7 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 SRCS	=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp  zombieHorde.cpp
 SRCS_DIR	= ./
-SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
+SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 
 all:	${NAME}
 

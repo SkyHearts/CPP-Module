@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:14:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/12 12:45:45 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/17 15:36:53 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(){
 	Zombie *horde = zombieHorde(3, "Thanos");
 	for (int i = 0; i < 3; i++)
 		horde[i].announce();
-	system("leaks -q zombie");
+	delete[] horde;
+	//system("leaks -q zombie");
 	return (0);
 }
