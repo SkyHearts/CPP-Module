@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:52:49 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:42:59 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/18 12:24:48 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,20 @@ Cat::Cat(Cat const &other){
 }
 
 Cat& Cat::operator=(const Cat& other){
-	if (this == &other)
-		return (*this);
 	this->m_type = other.m_type;
-	this->_Brain = other._Brain;
-	std::cout << "Cat operator copy created" << std::endl;
+	if (this != &other){
+		delete this->_Brain;
+		this->_Brain = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->_Brain->setIdeas(i, other._Brain->getIdeas()[i]);; 
+	}
+	std::cout << "Cat operator copy called" << std::endl;
 	return *this;
 }
 
 Cat::~Cat(){
-	delete[] this->_Brain;
 	std::cout << this->m_type << " type Cat destructor called" << std::endl;
+	delete this->_Brain;
 }
 
 void Cat::makeSound(void) const{

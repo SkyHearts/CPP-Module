@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:00:47 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:25:07 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/18 12:07:57 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main()
 		const WrongAnimal* wrong = new WrongCat();
 		std::cout << wrong->getType() << " " << std::endl;
 		wrong->makeSound(); //will output the wronganimal sound!
+		delete wrong;
 	}
 return 0;
 }

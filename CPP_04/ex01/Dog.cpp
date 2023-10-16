@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:48:51 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:42:51 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/18 12:24:41 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,24 @@ Dog::Dog(){
 }
 
 Dog::Dog(Dog const &other){
+	std::cout << "Dog copy called" << std::endl;
 	*this = other;
-	std::cout << "Dog copy created" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other){
-	if (this == &other)
-		return (*this);
 	this->m_type = other.m_type;
-	this->_Brain = other._Brain;
-	std::cout << "Dog operator copy created" << std::endl;
+	if (this != &other){
+		this->_Brain = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->_Brain->setIdeas(i, other._Brain->getIdeas()[i]);
+	}
+	std::cout << "Dog operator copy called" << std::endl;
 	return *this;
 }
 
 Dog::~Dog(){
-	delete[] this->_Brain;
 	std::cout << this->m_type << " type Dog destructor called" << std::endl;
+	delete this->_Brain;
 }
 
 void Dog::makeSound(void) const{

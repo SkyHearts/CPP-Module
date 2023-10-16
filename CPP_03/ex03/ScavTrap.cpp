@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:55:16 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/15 18:41:53 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/09 17:03:57 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ ScavTrap::ScavTrap(){
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_dp = 20;
+    this->_scavEP = 50;
 	this->guardMode = false;
 	std::cout << "ScavTrap created" << std::endl;
 }
@@ -25,6 +26,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_dp = 20;
+    this->_scavEP = 50;
 	this->guardMode = false;
 	std::cout << "ScavTrap name created" << std::endl;
 }

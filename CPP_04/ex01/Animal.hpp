@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:54:58 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:39:41 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/18 10:24:21 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class Dog : public Animal
 	Dog& operator=(const Dog& other);
 	~Dog();
 	void makeSound(void) const;
+	Brain* getBrain(void) const { return _Brain; }
 };
 
 class Cat : public Animal

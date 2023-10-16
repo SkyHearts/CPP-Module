@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 16:35:33 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/15 18:06:38 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/09 16:57:46 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ FragTrap::FragTrap() {
 FragTrap::FragTrap(std::string name) : ClapTrap(name){
 	this->_name = name;
 	this->_hp = 100;
-	this->_ep = 50;
-	this->_dp = 20;
+	this->_ep = 100;
+	this->_dp = 30;
+
 	std::cout << "FragTrap name created" << std::endl;
 }
 

@@ -1,9 +1,9 @@
 NAME		= main
-CC			= c++
+CC			= g++ 
 FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -I ${INCLUDES}
 #${INCLUDES}
-#INCLUDES	= ./
+INCLUDES	= -g3
 
 SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 SRCS_DIR	= ./

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:08:02 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/12 14:32:35 by jyim             ###   ########.fr       */
+/*   Updated: 2023/07/25 12:36:12 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanB.hpp"
 
 int main(){
-{
+	{
 	Weapon club = Weapon("crude spiked club");
 	HumanA bob("Bob", club);
 	bob.attack();

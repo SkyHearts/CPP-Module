@@ -1,7 +1,7 @@
 NAME		= main
 CC			= c++
 FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 ${FSAN}
 #${INCLUDES}
 #INCLUDES	= ./
 

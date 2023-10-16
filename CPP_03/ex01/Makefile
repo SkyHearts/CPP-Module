@@ -1,7 +1,7 @@
 NAME		= main
 CC			= c++
 FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 $(FSAN)
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 #${INCLUDES}
 #INCLUDES	= ./
 
