@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 11:55:33 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/16 09:51:38 by jyim             ###   ########.fr       */
+/*   Created: 2023/10/19 17:56:05 by jyim              #+#    #+#             */
+/*   Updated: 2023/10/19 18:36:10 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <string>
+#include <iostream>
 
-Zombie* zombieHorde( int N, std::string name ){
-	Zombie *newZombie = new Zombie[N];
+class AMateria;
+
+class ICharacter
+{
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
+
+class Character : public ICharacter
+{
 	
-	for (int i = 0; i < N; i++)
-		newZombie[i].setName(name + " " + std::to_string(i));
-	return newZombie;
 }

@@ -6,17 +6,11 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:12:28 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/12 12:34:05 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 09:49:08 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-// void Zombie::randomChump( std::string name ){
-// 	Zombie* new_zombie = new Zombie();
-// 	new_zombie->name = name;
-// 	new_zombie->announce();
-// }
 
 void randomChump( std::string name ){
 	Zombie *newZombie = new Zombie();

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:57:17 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/13 16:49:27 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/18 17:32:19 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ DiamondTrap::DiamondTrap(){
 	// this->_hp = FragTrap::getFragTrapHP();
 	// this->_ep = ScavTrap::getScavTrapEP();
 	// this->_dp = FragTrap::getFragTrapDP();
-    this->_hp = FragTrap::_hp;
-    this->_ep = getScavTrapEP();
-    this->_dp = FragTrap::_dp;
-    std::cout << "hp: " << this->_hp << " ep: " << this->_ep << " dp: " << this->_dp << std::endl;
+    this->_hp = FragTrap::_fragHP;
+    this->_ep = ScavTrap::_scavEP;
+    this->_dp = FragTrap::_fragDP;
+    // std::cout << "hp: " << this->_hp << " ep: " << this->_ep << " dp: " << this->_dp << std::endl;
 	std::cout << "DiamondTrap created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name){
 	this->_name = name + "_clap_name";
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_dp = 30;
+    this->_hp = FragTrap::_fragHP;
+    this->_ep = ScavTrap::_scavEP;
+    this->_dp = FragTrap::_fragDP;
 	std::cout << "DiamondTrap created" << std::endl;
 }
 
@@ -55,7 +55,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other){
 }
 
 std::ostream& operator<<(std::ostream& os, const DiamondTrap& other){
-	os << "DiamondTrap " << other._name << " currently has " << other._hp << " HP, and " << other._ep << " EP left!";
+	os << "DiamondTrap " << other.getName() << " currently has " << other.getHP() << " HP, and " << other.getEP() << " EP left!";
 	return os;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:55:07 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/15 15:05:08 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 17:41:21 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ a.attack("Thot 1");
 std::cout << a << std::endl;
 a.takeDamage(5);
 std::cout << a << std::endl;
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
+a.beRepaired(2);
 a.beRepaired(2);
 std::cout << *b << std::endl;
 a.takeDamage(7);

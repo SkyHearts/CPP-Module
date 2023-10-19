@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:19:19 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/13 13:32:53 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 13:31:38 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void Harl::harlFilter(int i){
 
 void Harl::complain(std::string level){
 	Harl::Function func[5] ={
-		{0, "debug"},
-		{1, "info"},
-		{2, "warning"},
-		{3, "error"},
+		{0, "DEBUG"},
+		{1, "INFO"},
+		{2, "WARNING"},
+		{3, "ERROR"},
 		{4, level}
 	};
 

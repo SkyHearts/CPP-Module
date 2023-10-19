@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:55:16 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/15 18:08:22 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/18 16:35:46 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ScavTrap::ScavTrap(ScavTrap const &other){
 }
 
 std::ostream& operator<<(std::ostream& os, const ScavTrap& other){
-	os << "ScavTrap " << other._name << " currently has " << other._hp << " HP, and " << other._ep << " EP left!";
+	os << "ScavTrap " << other.getName() << " currently has " << other.getHP() << " HP, and " << other.getEP() << " EP left!";
 	return os;
 }
 
@@ -52,15 +52,15 @@ ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap " << this->_name << " despawned!" << std::endl;
 }
 
-//void ScavTrap::attack(const std::string& target){
-//	if (this->_ep > 0){
-//		this->_ep -= 1;
-//		std::cout << "ScavTrap " << this->_name << " attack " << target << " causing ";
-//		std::cout << this->_dp << " points of damage!" << std::endl;
-//	}
-//	else
-//		std::cout << "ScavTrap " << this->_name << " ran out of EP!" << std::endl;
-//}
+void ScavTrap::attack(const std::string& target){
+	if (this->_ep > 0){
+		this->_ep -= 1;
+		std::cout << "ScavTrap " << this->_name << " attack " << target << " causing ";
+		std::cout << this->_dp << " points of damage!" << std::endl;
+	}
+	else
+		std::cout << "ScavTrap " << this->_name << " ran out of EP!" << std::endl;
+}
 
 //void ScavTrap::takeDamage(unsigned int amount){
 //	if (this->_hp <= 0)

@@ -6,18 +6,20 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 16:35:33 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/09 17:04:08 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/18 17:29:36 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+int FragTrap::_fragHP = 100;
+int FragTrap::_fragEP = 100;
+int FragTrap::_fragDP = 30;
+
 FragTrap::FragTrap() {
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_dp = 30;
-    this->_fragDP = 30;
-    this->_fragHP = 100;
 	std::cout << "FragTrap created" << std::endl;
 }
 
@@ -26,8 +28,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_dp = 30;
-    this->_fragDP = 30;
-    this->_fragHP = 100;
 	std::cout << "FragTrap name created" << std::endl;
 }
 
@@ -45,7 +45,7 @@ FragTrap::FragTrap(FragTrap const &other){
 }
 
 std::ostream& operator<<(std::ostream& os, const FragTrap& other){
-	os << "FragTrap " << other._name << " currently has " << other._hp << " HP, and " << other._ep << " EP left!";
+	os << "FragTrap " << other.getName() << " currently has " << other.getHP() << " HP, and " << other.getEP() << " EP left!";
 	return os;
 }
 
@@ -53,15 +53,15 @@ FragTrap::~FragTrap(){
 	std::cout << "FragTrap " << this->_name << " despawned!" << std::endl;
 }
 
-//void FragTrap::attack(const std::string& target){
-//	if (this->_ep > 0){
-//		this->_ep -= 1;
-//		std::cout << "FragTrap " << this->_name << " attack " << target << " causing ";
-//		std::cout << this->_dp << " points of damage!" << std::endl;
-//	}
-//	else
-//		std::cout << "FragTrap " << this->_name << " ran out of EP!" << std::endl;
-//}
+void FragTrap::attack(const std::string& target){
+	if (this->_ep > 0){
+		this->_ep -= 1;
+		std::cout << "FragTrap " << this->_name << " attack " << target << " causing ";
+		std::cout << this->_dp << " points of damage!" << std::endl;
+	}
+	else
+		std::cout << "FragTrap " << this->_name << " ran out of EP!" << std::endl;
+}
 
 //void FragTrap::takeDamage(unsigned int amount){
 //	if (this->_hp <= 0)

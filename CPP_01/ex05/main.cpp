@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:23:55 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/14 08:49:38 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 13:30:59 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main(void){
 	Harl harling;
 	
-	harling.complain("debug");
-	//harling.complain("info");
-	//harling.complain("warning");
-	//harling.complain("error");
+	harling.complain("DEBUG");
+	harling.complain("INFO");
+	harling.complain("WARNING");
+	harling.complain("ERROR");
 	return 0;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap copy.cpp                                  :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:55:16 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/15 18:10:28 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/18 17:27:14 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 }
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& other){
-	os << "ClapTrap " << other._name << " currently has " << other._hp << " HP, and " << other._ep << " EP left!";
+	os << "ClapTrap " << other.getName() << " currently has " << other.getHP() << " HP, and " << other.getEP() << " EP left!";
 	return os;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:47:16 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/14 10:07:28 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 14:24:40 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class Fixed
 	Fixed& operator=(const Fixed& other);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-	friend	std::ostream& operator<<(std::ostream& os, const Fixed& other);
 	
 	private:
 	int rawBit;
 	static int fracBits;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& other);

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:47:16 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/14 14:09:58 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 14:46:41 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Fixed
 	Fixed& operator=(const Fixed& other);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-	friend	std::ostream& operator<<(std::ostream& os, const Fixed& other);
 	//Comparison operator
 	bool operator>(const Fixed& other) const;
 	bool operator<(const Fixed& other) const;
@@ -57,4 +56,5 @@ class Fixed
 	static int fracBits;
 };
 
+std::ostream& operator<<(std::ostream& os, const Fixed& other);
 const float EulerConstant = std::exp(1.0);

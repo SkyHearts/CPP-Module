@@ -5,25 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 14:14:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/16 12:58:54 by jyim             ###   ########.fr       */
+/*   Created: 2023/07/17 15:00:47 by jyim              #+#    #+#             */
+/*   Updated: 2023/10/19 17:42:38 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Animal.hpp"
 
-void run() {
-	Zombie *one = newZombie("Andi");
-	one->announce();
-	randomChump("Artie");
-	delete one;
-}
-
-int main(){
-	// std::string zombie1_name = "Andi";
-	// std::string zombie2_name = "Artie";
-	// create pointer for the class
-/* 	link pointer to newly create class and announce */
-	system("leaks -q zombie");
-	return (0);
+int main()
+{
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }

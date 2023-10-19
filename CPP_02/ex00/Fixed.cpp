@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:58:36 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/13 15:08:52 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 14:11:47 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #include <iostream>
 #include <string>
 
+int Fixed::fracBits = 8;
+
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
 	this->rawBit = 0;
-	this->fracBits = 8;
+	// this->fracBits = 8;
 }
 
 Fixed::Fixed(Fixed &other){

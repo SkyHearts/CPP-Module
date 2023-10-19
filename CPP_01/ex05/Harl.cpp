@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:19:19 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/14 08:51:00 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 13:30:08 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void Harl::complain(std::string level){
 	Harl::Function func[4] ={
-		{0, "debug", &Harl::debug},
-		{1, "info", &Harl::info},
-		{2, "warning", &Harl::warning},
-		{3, "error", &Harl::error}
+		{0, "DEBUG", &Harl::debug},
+		{1, "INFO", &Harl::info},
+		{2, "WARNING", &Harl::warning},
+		{3, "ERROR", &Harl::error}
 	};
 
 	for (int i = 0; i < 4; i++){

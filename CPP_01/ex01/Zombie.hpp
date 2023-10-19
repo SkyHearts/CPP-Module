@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:25:59 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/12 12:28:39 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/16 10:03:39 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ private:
 	std::string name;
 public:
 	/* Constructor */
-	//Zombie();
+	Zombie();
 	/* Destructor */
-	// ~Zombie();
+	~Zombie();
 	void announce( void );
-	/* Helps outside function to insert name as thehy have no access to private class */
+	/* Helps outside function to insert name as they have no access to private class */
 	void setName(std::string _name);
 };
 

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:58:14 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/13 16:49:44 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/18 09:59:30 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	DiamondTrap(std::string name);
 	DiamondTrap(DiamondTrap const &other);
 	DiamondTrap& operator=(const DiamondTrap& other);
-	friend	std::ostream& operator<<(std::ostream& os, const DiamondTrap& other);
     void attack(const std::string& target);
     int getScavTrapEP() const { return ScavTrap::_ep; }
 	~DiamondTrap();
@@ -32,3 +31,5 @@ class DiamondTrap : public ScavTrap, public FragTrap
     // FragTrap fragTrap;
     // ScavTrap scavTrap;
 };
+
+std::ostream& operator<<(std::ostream& os, const DiamondTrap& other);
