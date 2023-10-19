@@ -6,12 +6,12 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:15:04 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:15:59 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/19 19:06:20 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat(){
 	this->m_type = "WrongCat";

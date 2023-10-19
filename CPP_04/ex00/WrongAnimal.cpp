@@ -6,11 +6,11 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:17:13 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:18:08 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/19 19:06:06 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : m_type("Unknown"){
 	std::cout << "WrongAnimal constructor called" << std::endl;

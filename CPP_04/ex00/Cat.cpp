@@ -6,11 +6,11 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:52:49 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/17 17:06:08 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/19 19:05:50 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 Cat::Cat(){
 	this->m_type = "Cat";
