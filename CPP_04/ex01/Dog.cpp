@@ -6,11 +6,11 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:48:51 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/18 12:24:41 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:55:14 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
 Dog::Dog(){
 	this->m_type = "Dog";

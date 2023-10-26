@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 14:54:58 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/18 12:43:28 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:59:16 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,30 +34,30 @@ class Animal
 	virtual void makeSound(void) const = 0;
 };
 
-class Dog : public Animal
-{
-	private:
-	Brain* _Brain;
-	public:
-	Dog();
-	Dog(Dog const &other);
-	Dog& operator=(const Dog& other);
-	~Dog();
-	void makeSound(void) const;
-	Brain* getBrain(void) const { return _Brain; }
-};
+// class Dog : public Animal
+// {
+// 	private:
+// 	Brain* _Brain;
+// 	public:
+// 	Dog();
+// 	Dog(Dog const &other);
+// 	Dog& operator=(const Dog& other);
+// 	~Dog();
+// 	void makeSound(void) const;
+// 	Brain* getBrain(void) const { return _Brain; }
+// };
 
-class Cat : public Animal
-{
-	private:
-	Brain* _Brain;
-	public:
-	Cat();
-	Cat(Cat const &other);
-	Cat& operator=(const Cat& other);
-	~Cat();
-	void makeSound(void) const;
-};
+// class Cat : public Animal
+// {
+// 	private:
+// 	Brain* _Brain;
+// 	public:
+// 	Cat();
+// 	Cat(Cat const &other);
+// 	Cat& operator=(const Cat& other);
+// 	~Cat();
+// 	void makeSound(void) const;
+// };
 
 
 class WrongAnimal

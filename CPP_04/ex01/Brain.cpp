@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:43:13 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/18 11:33:14 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:57:19 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain::Brain(){
 	for (int i = 0; i < 100; i++)
-		this->ideas[i] = "Eureka! I have a great idea!";
+		this->ideas[i] = "Eureka! I have a great idea! " + std::to_string(i);
 	std::cout << "Brain constructor called" << std::endl;
 }
 

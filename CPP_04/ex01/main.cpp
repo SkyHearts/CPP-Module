@@ -6,11 +6,13 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:00:47 by jyim              #+#    #+#             */
-/*   Updated: 2023/07/18 12:10:05 by jyim             ###   ########.fr       */
+/*   Updated: 2023/10/23 13:54:35 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {

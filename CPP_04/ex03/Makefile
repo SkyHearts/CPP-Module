@@ -1,11 +1,12 @@
 NAME		= main
 CC			= c++
-FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
-#${INCLUDES}
-#INCLUDES	= ./
+# FSAN		= -fsanitize=address -g3 
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 
+# $(FSAN)
+# ${INCLUDES}
+# INCLUDES	= ./
 
-SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS	=	main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp 
 SRCS_DIR	= ./
 SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 

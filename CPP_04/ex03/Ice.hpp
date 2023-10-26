@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:59:50 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/26 12:44:04 by jyim             ###   ########.fr       */
+/*   Created: 2023/10/23 08:42:45 by jyim              #+#    #+#             */
+/*   Updated: 2023/10/26 12:44:56 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #pragma once
-// #include <string>
-// #include <iostream>
-// #include "AMateria.hpp"
 
 // #ifndef MATERIA_LIB
 // #define MATERIA_LIB
@@ -22,25 +20,26 @@
 
 // #endif
 
-// class AMateria;
+// #ifndef CHARACTER_LIB
+// #define CHARACTER_LIB
 
-// class IMateriaSource
-// {
-// 	public:
-// 	virtual ~IMateriaSource() {}
-// 	virtual void learnMateria(AMateria*) = 0;
-// 	virtual AMateria* createMateria(std::string const & type) = 0;
-// };
+// # include "ICharacter.hpp"
+
+// #endif
+// # include "ICharacter.hpp"
+// # include "AMateria.hpp"
+// class AMateria;
 
 #include "Header.hpp"
 
-class MateriaSource : public IMateriaSource
+class Ice : public AMateria
 {
-	private:
-	AMateria* mSlot[4];
 	public:
-	MateriaSource();
-	~MateriaSource();
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
+		Ice();
+		// Ice(std::string const & type);
+		Ice(Ice const &other);
+		~Ice(void);
+		Ice& operator=(const Ice& other);
+		AMateria* clone () const;
+		void use(ICharacter& target);
 };
