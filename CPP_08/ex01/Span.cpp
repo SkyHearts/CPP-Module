@@ -2,6 +2,22 @@
 #include <span>
 #include <unistd.h>
 
+Span::Span(){
+	throw Param("Insert size of container");
+}
+
+Span::Span(const Span& other){
+	*this = other;
+}
+
+Span& Span::operator=(const Span& other){
+		if (this != &other){
+			this->_size = other._size;
+			this->list = other.list;
+		}
+		return *this;
+}
+
 void Span::addNumber(int num) {
 	try
 	{

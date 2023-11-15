@@ -5,20 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:36:32 by jyim              #+#    #+#             */
-/*   Updated: 2023/11/03 17:43:55 by jyim             ###   ########.fr       */
+/*   Created: 2023/11/09 13:46:09 by jyim              #+#    #+#             */
+/*   Updated: 2023/11/10 13:02:34 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Identify.hpp"
+#include "BitcoinExchange.hpp"
 
-int main(void){
-	Base identifier;
-	
-	Base* f = identifier.generate();
-	
-	identifier.identify(f);
-	identifier.identify(*f);
-	delete f;
-
+int main(int argc, char **argv)
+{
+	if (argc != 2){
+		std::cout << "Error: could not open file." << std::endl;
+		return 0;
+	}
+	BitcoinExchange Rates;
+	try
+	{
+		Rates.ParseExchangeRate("data.csv");
+		Rates.PrintValue(argv[1]);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }

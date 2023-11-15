@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:31:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/13 16:16:04 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/08 10:39:14 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ private:
 class Span
 {
 	public:
-	Span() {throw Param("Insert size of container");}
+	Span();
 	Span(size_t N) : _size(N) {}
+	Span(const Span& other);
+	Span& operator=(const Span& other);
 	void addNumber (int num);
 	int shortestSpan(void);
 	int longestSpan(void);

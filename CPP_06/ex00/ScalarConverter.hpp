@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:31:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/11 15:19:48 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/03 17:31:59 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class ScalarConverter
 	ScalarConverter(std::string input);
 	ScalarConverter(ScalarConverter const &other);
 	ScalarConverter& operator=(const ScalarConverter& other);
-	//friend std::ostream& operator<<(std::ostream& os, const ScalarConverter& other);
 	~ScalarConverter();
 
 	//PrintConvertion

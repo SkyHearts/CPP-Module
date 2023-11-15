@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:36:32 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/30 16:58:05 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 15:58:20 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void){
 		std::cout << Bonsai << std::endl;
 		a.signForm(Bonsai);
 		std::cout << Bonsai << std::endl;
-		//Bonsai.execute(a);
+		Bonsai.execute(a);
 		a.executeForm(Bonsai);
 		
 		RobotomyRequestForm FishSticks("FishStick man");
@@ -41,9 +41,9 @@ int main(void){
 		std::cout << Rihanna << std::endl;
 		Rihanna.execute(a);
 	}
-	catch(Exception& e)
+	catch(std::exception & e)
 	{
-		std::cerr << e.getMessage() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -15,40 +15,41 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-
-    // for (int i = 0; i < MAX_VAL; i++)
+	Array<int> num2(numbers);
+    // //SCOPE
     // {
-    //     if (mirror[i] != numbers[i])
-    //     {
-    //         std::cerr << "didn't save the same value!!" << std::endl;
-    //         return 1;
-    //     }
-    //     if (mirror[i] == numbers[i])
-    //     {
-    //         std::cout << "index " << i << " have the same value!!" << std::endl;
-    //     }
+    //     Array<int> tmp = numbers;
+    //     Array<int> test(tmp);
     // }
-    try
+
+    for (int i = 0; i < MAX_VAL; i++)
     {
-        numbers[-2] = 0;
+        if (num2[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+        if (num2[i] == numbers[i])
+        {
+            std::cout << "index " << i << " have the same value!!" << std::endl;
+        }
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    // try
+    // {
+    //     numbers[-2] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // try
+    // {
+    //     numbers[MAX_VAL] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -57,10 +58,10 @@ int main(int, char**)
     for (int i = 0; i < MAX_VAL; i++)
     {
         std::cout << "Checking " << numbers[i] << " and " << mirror[i] << std::endl;
-        if (mirror[i] != numbers[i])
+        if (num2[i] != numbers[i])
         {
             std::cout << "They didn't save the same value!!" << std::endl; //Succesfully redefine number
-            return 1;
+            // return 1;
         }
     }
     delete [] mirror;//

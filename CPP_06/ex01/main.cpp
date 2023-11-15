@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:36:32 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/11 16:56:40 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/02 15:20:47 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int main(void){
 	std::cout << test->y << std::endl;
 	std::cout << ptest << std::endl;
 	
+	std::cout << std::endl;
+	std::cout << "uintptr: " << ptest << std::endl;
+	std::cout << "Data* : " << test << std::endl;
 	std::cout << std::endl;
 
 	Data* next = f.deserialize(ptest);

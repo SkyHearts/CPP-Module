@@ -1,15 +1,19 @@
-NAME		= identify
+NAME		= PmergeMe
 CC			= g++ 
 FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -I ${INCLUDES}
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -I ${FSAN}
 #${INCLUDES}
 INCLUDES	= -g3
 
-SRCS	=	main.cpp Identify.cpp 
+SRCS	=	main.cpp PmergeMe.cpp 
 SRCS_DIR	= ./
-SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
+SRCS_OBJS =  $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 
 all:	${NAME}
+
+${SRCS_DIR}%.o: ${SRCS_DIR}%.cpp
+	@echo "Compiling $<"
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${SRCS_OBJS}
 	@echo "Compiling Main"

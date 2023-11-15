@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:36:32 by jyim              #+#    #+#             */
-/*   Updated: 2023/11/03 17:43:55 by jyim             ###   ########.fr       */
+/*   Created: 2023/11/09 13:49:06 by jyim              #+#    #+#             */
+/*   Updated: 2023/11/10 16:30:40 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Identify.hpp"
+#pragma once
 
-int main(void){
-	Base identifier;
-	
-	Base* f = identifier.generate();
-	
-	identifier.identify(f);
-	identifier.identify(*f);
-	delete f;
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iterator>
+#include <time.h>
+#include <stack>
 
-}
+class RPN
+{
+	private:
+		std::stack<int> _expr;
+	public:
+		RPN();
+		~RPN();
+		RPN(RPN const &other);
+		RPN& operator=(const RPN& other);
+		int getOperand(char s);
+		void calc(char *expr);
+};

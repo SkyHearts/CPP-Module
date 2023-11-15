@@ -1,11 +1,11 @@
-NAME		= identify
+NAME		= btc
 CC			= g++ 
 FSAN		= -fsanitize=address -g3 
 CFLAGS		= -Wall -Wextra -Werror -std=c++98 -I ${INCLUDES}
 #${INCLUDES}
 INCLUDES	= -g3
 
-SRCS	=	main.cpp Identify.cpp 
+SRCS	=	main.cpp BitcoinExchange.cpp 
 SRCS_DIR	= ./
 SRCS_OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.cpp=.o))
 

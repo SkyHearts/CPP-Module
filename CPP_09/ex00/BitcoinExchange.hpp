@@ -1,51 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Identify.hpp                                       :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 11:31:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/11/03 17:42:01 by jyim             ###   ########.fr       */
+/*   Created: 2023/11/09 13:49:06 by jyim              #+#    #+#             */
+/*   Updated: 2023/11/10 12:03:28 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#pragma oce
 
-//#include <exception>
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include <iterator>
+#include <time.h>
 
-class Base
+class BitcoinExchange
 {
-	public:
-	Base();
-	virtual ~Base();
-	Base * generate(void);
-	void identify(Base* p);
-	void identify(Base& p);
-
-
 	private:
-	std::string _input;
-};
-
-class A : public Base
-{
+		std::map<long, float> _ExchangeRate;
 	public:
-	A();
-	~A();
-};
-
-class B : public Base
-{
-	public:
-	B();
-	~B();
-};
-
-class C : public Base
-{
-	public:
-	C();
-	~C();
+		BitcoinExchange();
+		~BitcoinExchange();
+		BitcoinExchange(BitcoinExchange const &other);
+		BitcoinExchange& operator=(const BitcoinExchange& other);
+		void ParseExchangeRate(char const *path);
+		void PrintValue(char const *path);
+	
 };

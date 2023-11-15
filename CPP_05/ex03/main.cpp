@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:36:32 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/01 17:08:55 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/02 13:46:33 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ int main(void){
 		ShrubberyCreationForm Bonsai("Bonsai");
 		std::cout << a << std::endl;
 		
-		std::cout << Bonsai << std::endl;
-		a.signForm(Bonsai);
-		std::cout << Bonsai << std::endl;
-		//Bonsai.execute(a);
-		a.executeForm(Bonsai);
+		// std::cout << Bonsai << std::endl;
+		// a.signForm(Bonsai);
+		// std::cout << Bonsai << std::endl;
+		// Bonsai.execute(a);
+		// a.executeForm(Bonsai);
 		
-		RobotomyRequestForm FishSticks("FishStick man");
-		std::cout << FishSticks << std::endl;
-		a.signForm(FishSticks);
-		std::cout << FishSticks << std::endl;
-		FishSticks.execute(a);
+		// RobotomyRequestForm FishSticks("FishStick man");
+		// std::cout << FishSticks << std::endl;
+		// a.signForm(FishSticks);
+		// std::cout << FishSticks << std::endl;
+		// FishSticks.execute(a);
 
-		PresidentialPardonForm Rihanna("Rihanna");
-		std::cout << Rihanna << std::endl;
-		a.signForm(Rihanna);
-		std::cout << Rihanna << std::endl;
-		Rihanna.execute(a);
+		// PresidentialPardonForm Rihanna("Rihanna");
+		// std::cout << Rihanna << std::endl;
+		// a.signForm(Rihanna);
+		// std::cout << Rihanna << std::endl;
+		// Rihanna.execute(a);
 
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -50,9 +50,9 @@ int main(void){
 		std::cout << *rrf << std::endl;
 		rrf->execute(a);
 	}
-	catch(Exception& e)
+	catch(std::exception& e)
 	{
-		std::cerr << e.getMessage() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	
 }

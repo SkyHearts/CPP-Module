@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:15:49 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/30 16:45:53 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 15:46:45 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
 	if (!this->isSigned())
-		throw(Exception("Form not signed"));
+		throw(CusException("Form not signed"));
 	if (executor.getGrade() > this->getExecGrade())
 		AForm::GradeTooLowException();
 	std::cout << this->_target << " has been pardoned by " << executor.getName() << "." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:31:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/30 16:49:26 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 14:36:23 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,24 @@
 
 class Form;
 
-class Exception {
-public:
-   Exception(const std::string& msg) : _msg(msg) {}
-  ~Exception() {}
+// class Exception {
+// public:
+//    Exception(const std::string& msg) : _msg(msg) {}
+//   ~Exception() {}
 
-   std::string getMessage() const {return(_msg);}
+//    std::string getMessage() const {return(_msg);}
+// private:
+//    std::string _msg;
+// };
+
+class CusException : public std::exception
+{
+public:
+	CusException(const std::string& msg) throw() : _msg(msg) {}
+	~CusException() throw() {}
+	virtual const char* what() const throw() {return _msg.c_str() ; }
 private:
-   std::string _msg;
+	std::string _msg;
 };
 
 class Bureaucrat

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:33:52 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/29 15:17:12 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 15:20:11 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Form::Form() : _name("Blank"), _signature(false), _signGrade(150), _execGrade(15
 
 Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signature(false), _signGrade(signGrade), _execGrade(execGrade){
 	std::cout << "Form fill constructor called" << std::endl;
-	if (this->getSignGrade() > 150)
+	if (this->getSignGrade() > 150 || this->getExecGrade() > 150)
 		Form::GradeTooLowException();
-	if (this->getSignGrade() < 1)
+	if (this->getSignGrade() < 1 || this->getExecGrade() < 1)
 		Form::GradeTooHighException();
 }
 
@@ -45,11 +45,11 @@ Form& Form::operator=(const Form& other){
 
 //Exeception
 void Form::GradeTooHighException(void){
-	throw(Exception("Grade is too high!"));
+	throw(CusException("Grade is too high!"));
 }
 
 void Form::GradeTooLowException(void){
-	throw(Exception("Grade is too low!"));
+	throw(CusException("Grade is too low!"));
 }
 
 //Set func
@@ -69,8 +69,10 @@ std::ostream& operator<<(std::ostream& os, const Form& other){
 //Sign func
 void Form::beSigned(Bureaucrat const &person){
 	if (!(this->isSigned())){
-		if (person.getGrade() <= this->getSignGrade())
+		if (person.getGrade() <= this->getSignGrade()){
 			std::cout << person.getName() << " signed " << this->getName() << "." << std::endl;
+			this->_signature = true;
+		}
 		else{
 			std::cout << person.getName() << " couldn't sign " << this->getName() << " because of insufficient grade." << std::endl;
 			Form::GradeTooLowException();

@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:31:06 by jyim              #+#    #+#             */
-/*   Updated: 2023/10/11 12:57:05 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/09 13:41:02 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@ void easyfind(T a, int find) {
 	{
 		size_t index = 0;
 		typedef typename T::iterator Iter;
-		for (Iter p = a.begin(); p != a.end(); ++p ){
-			if ((*p) == find)
-				break ;
-		index++;
-		}
-		if (index == a.size())
+		Iter ret = std::find(a.begin(), a.end(), find);
+		// for (Iter p = a.begin(); p != a.end(); ++p ){
+		// 	if ((*p) == find)
+		// 		break ;
+		// index++;
+		// }
+		if (ret == a.end())
 			throw NotFound("Number not found");
-		else
-			std::cout << "Found " << find << " at index: " << index << std::endl;
+		// else
+		// 	std::cout << "Found " << find << " at index: " << index << std::endl;
+		return ret;
 	}
 	catch(NotFound &e)
 	{

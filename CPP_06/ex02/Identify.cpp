@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:42:26 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/13 13:01:00 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/03 17:44:47 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 
 //Constructor and destructor
 Base::Base(){
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Base constructor called" << std::endl;
 }
 
 Base::~Base(){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Base Destructor called" << std::endl;
 }
-
-//std::ostream& operator<<(std::ostream& os, const Base& other){
-//	os << other._name << ", Base grade " << other._grade << ".";
-//	return os;
-//}
 
 A::A(){
 	std::cout << "A constructor called" << std::endl;
@@ -74,11 +69,25 @@ void Base::identify(Base* p){
 		std::cout << "C!" << std::endl;
 }
 
-//void Base::identify(Base& p){
-//	if (dynamic_cast<A>(p) != nullptr)
-//		std::cout << "Class is identified as A!" << std::endl;
-//	else if (dynamic_cast<B>(p) != nullptr)
-//		std::cout << "Class is identified as B!" << std::endl;
-//	else
-//		std::cout << "Class is identified as C!" << std::endl;
-//}
+void Base::identify(Base& p){
+
+	try {
+    	A a = dynamic_cast<A&>(p);
+		std::cout << "A!" << std::endl;
+	}
+	catch(const std::bad_cast& e) {
+		try {
+			B b = dynamic_cast<B&>(p);
+			std::cout << "B!" << std::endl;
+		}
+		catch(const std::bad_cast& e) {
+			std::cout << "C!" << std::endl;
+		}
+	}
+	// if (dynamic_cast<A*>(&p) != nullptr)
+	// 	std::cout << "Class is identified as A!" << std::endl;
+	// else if (dynamic_cast<B*>(&p) != nullptr)
+	// 	std::cout << "Class is identified as B!" << std::endl;
+	// else
+	// 	std::cout << "Class is identified as C!" << std::endl;
+}

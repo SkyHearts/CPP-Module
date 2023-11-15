@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:20:13 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/01 17:07:23 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/02 13:28:56 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ AForm* Intern::makeForm(std::string name, std::string target){
 			return ((this->*createForm[i])(target));
 		}
 	}
-	throw(Exception("Form type not found"));
+	throw(CusException("Form type not found"));
 }

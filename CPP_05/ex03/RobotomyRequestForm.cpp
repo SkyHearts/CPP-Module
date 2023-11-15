@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:15:49 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/30 16:38:13 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/02 13:29:42 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void robotomize(std::string target){
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 	if (!this->isSigned())
-		throw(Exception("Form not signed"));
+		throw(CusException("Form not signed"));
 	if (executor.getGrade() > this->getExecGrade())
 		AForm::GradeTooLowException();
 	robotomize(this->_target);

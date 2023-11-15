@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:42:26 by jyim              #+#    #+#             */
-/*   Updated: 2023/09/11 15:15:26 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/03 17:25:01 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@ bool checkAlpha(const std::string &str){
     bool retVal = true;
 	const char *tmp_str = str.c_str();
 	int size = strlen(tmp_str);
-    for (int i = 0; i < size; i++){
+	int count = 0;
+	int i = 0;
+    for (; i < size; i++){
         if (isalpha(tmp_str[i])){
-            retVal = false;
-			throw(std::invalid_argument("Number only"));
-            break;
+			count++;
+			if (tmp_str[i] != 'f'){
+				retVal = false;
+				throw(std::invalid_argument("Invalid argument 1"));
+				break;
+			}
         }
     }
+	if (count > 1)
+		throw(std::invalid_argument("Invalid argument 2"));
+	if (count == 1 && str.find_last_of('f') != size - 1)
+		throw(std::invalid_argument("Invalid argument 3"));
     return retVal;
 }
 
@@ -31,10 +40,12 @@ int decimalCount(std::string input){
 		int length = input.length();
 		int i = input.find('.') + 1;
 		int count = 0;
+		const char *tmp_str = input.c_str();
 		//std::cout << "position '.' : " << i << std::endl;
 		//std::cout << "length : " << length << std::endl;
 		for (; i < length; ++i)
-			count++;
+			if (!isalpha(tmp_str[i]))
+				count++;
 		return (count);
 	}
 	return (0);
@@ -72,10 +83,14 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other){
 //}
 
 void ScalarConverter::printChar(std::string input){
-	std::cout << "in printchar" << std::endl;
+	// std::cout << "in printchar" << std::endl;
 	try
 	{
-		if (!input.compare("nan"))
+		if (!input.compare("nan") || !input.compare("nanf"))
+			std::cout << "char: Impossible" << std::endl;
+		else if (!input.compare("-inf") || !input.compare("-inff"))
+			std::cout << "char: Impossible" << std::endl;
+		else if (!input.compare("+inf") || !input.compare("+inff"))
 			std::cout << "char: Impossible" << std::endl;
 		else if (checkAlpha(input)){
 			double d = std::stod(input);
@@ -100,8 +115,12 @@ void ScalarConverter::printChar(std::string input){
 void ScalarConverter::printInt(std::string input){
 	try
 	{
-		if (!input.compare("nan"))
+		if (!input.compare("nan") || !input.compare("nanf"))
 			std::cout << "int : Impossible" << std::endl;
+		else if (!input.compare("-inf") || !input.compare("-inff"))
+			std::cout << "int: Impossible" << std::endl;
+		else if (!input.compare("+inf") || !input.compare("+inff"))
+			std::cout << "int: Impossible" << std::endl;
 		else if (checkAlpha(input)){
 			if (input.find('.') != input.length() - 1){
 				int c = static_cast<int>(std::stod(input));
@@ -120,8 +139,12 @@ void ScalarConverter::printInt(std::string input){
 void ScalarConverter::printFloat(std::string input){
 	try
 	{
-		if (!input.compare("nan"))
-			std::cout << "float : Impossible" << std::endl;
+		if (!input.compare("nan") || !input.compare("nanf"))
+			std::cout << "float : nanf" << std::endl;
+		else if (!input.compare("-inf") || !input.compare("-inff"))
+			std::cout << "float: -inf" << std::endl;
+		else if (!input.compare("+inf") || !input.compare("+inff"))
+			std::cout << "float: +inf" << std::endl;
 		else if (checkAlpha(input)){
 			if (input.find('.') != input.length() - 1){
 				float c = static_cast<float>(std::stod(input));
@@ -142,8 +165,12 @@ void ScalarConverter::printFloat(std::string input){
 void ScalarConverter::printDouble(std::string input){
 	try
 	{
-		if (!input.compare("nan"))
-			std::cout << "double : Impossible" << std::endl;
+		if (!input.compare("nan") || !input.compare("nanf"))
+			std::cout << "double : nan" << std::endl;
+		else if (!input.compare("-inf") || !input.compare("-inff"))
+			std::cout << "double: -inff" << std::endl;
+		else if (!input.compare("+inf") || !input.compare("+inff"))
+			std::cout << "double: +inff" << std::endl;
 		else if (checkAlpha(input)){
 			if (input.find('.') != input.length() - 1){
 				double c = std::stod(input);

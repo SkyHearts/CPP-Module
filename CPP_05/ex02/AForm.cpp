@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:33:52 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/30 15:52:49 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 15:46:05 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ AForm& AForm::operator=(const AForm& other){
 
 //Exeception
 void AForm::GradeTooHighException(void) const{
-	throw(Exception("Grade is too high!"));
+	throw(CusException("Grade is too high!"));
 }
 
 void AForm::GradeTooLowException(void) const{
-	throw(Exception("Grade is too low!"));
+	throw(CusException("Grade is too low!"));
 }
 
 //Set func

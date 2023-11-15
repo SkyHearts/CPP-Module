@@ -6,7 +6,7 @@
 /*   By: jyim <jyim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:42:26 by jyim              #+#    #+#             */
-/*   Updated: 2023/08/29 15:11:42 by jyim             ###   ########.fr       */
+/*   Updated: 2023/11/01 14:23:54 by jyim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& other){
 
 //Exeception
 void Bureaucrat::GradeTooHighException(void){
-	throw(Exception("Grade is higher than 1!!!"));
+	throw(CusException("Grade is higher than 1!!!"));
 }
 
 void Bureaucrat::GradeTooLowException(void){
-	throw(Exception("Grade is lower than 150!!!"));
+	throw(CusException("Grade is lower than 150!!!"));
 }
