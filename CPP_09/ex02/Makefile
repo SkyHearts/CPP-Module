@@ -1,7 +1,8 @@
 NAME		= PmergeMe
 CC			= g++ 
 FSAN		= -fsanitize=address -g3 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -I ${FSAN}
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
+#  -I ${FSAN}
 #${INCLUDES}
 INCLUDES	= -g3
 
